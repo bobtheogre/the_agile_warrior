@@ -1,13 +1,43 @@
+/* Remove Tailwind directives that are causing errors */
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/* Theme classes for light/dark mode */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0f0f1b;
+  --foreground: #ffffff;
+  --primary: #ff00a0;
+  --secondary: #00ffd9;
+  --synthwave-purple: #b100ff;
+  --synthwave-blue: #00a2ff;
+  --synthwave-gold: #ffbd00;
+  --glow-color: rgba(255, 0, 160, 0.6);
+  --grid-color: rgba(121, 0, 255, 0.2);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.theme-light {
+  --background: #fff5fc;
+  --foreground: #18172c;
+  --primary: #d72660;
+  --secondary: #3ec6e0;
+  --synthwave-purple: #a259f7;
+  --synthwave-blue: #3ec6e0;
+  --synthwave-gold: #ffe156;
+  --glow-color: rgba(215, 38, 96, 0.3);
+  --grid-color: rgba(162, 89, 247, 0.1);
+}
+
+.theme-dark {
+  --background: #0f0f1b;
+  --foreground: #ffffff;
+  --primary: #ff00a0;
+  --secondary: #00ffd9;
+  --synthwave-purple: #b100ff;
+  --synthwave-blue: #00a2ff;
+  --synthwave-gold: #ffbd00;
+  --glow-color: rgba(255, 0, 160, 0.6);
+  --grid-color: rgba(121, 0, 255, 0.2);
 }
 
 html,
@@ -19,9 +49,15 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-image: 
+    linear-gradient(0deg, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center center;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background 0.3s, color 0.3s;
 }
 
 * {
@@ -36,7 +72,411 @@ a {
 }
 
 @media (prefers-color-scheme: dark) {
-  html {
+  html:not(.theme-light) body {
     color-scheme: dark;
   }
+}
+
+/* Fabrica-inspired minimal, bold, modern styles with Synthwave elements */
+.modern-grid-container {
+  background: var(--background); /* Dark synthwave background */
+  min-height: 100vh;
+  padding: 0;
+}
+
+.modern-grid-default {
+  /* Default grid item with no special styling */
+  display: block;
+}
+
+.modern-grid-card {
+  /* Default styles for modern-grid-card */
+  display: block;
+  padding: 2rem 2.5rem;
+  margin: 1.5rem 0;
+  transition: all 0.3s;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.1rem;
+}
+
+.modern-grid-card:hover {
+  transform: translateY(-5px);
+}
+
+.modern-grid-hero {
+  background: transparent;
+  color: var(--foreground);
+  padding: 6rem 0 3rem 0;
+  text-align: left;
+  position: relative;
+}
+
+.modern-hero-bg {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  width: 100%;
+  background: transparent !important;
+}
+
+.hero-image-glow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+}
+.hero-image-glow img, .hero-image-glow > * {
+  border-radius: 1.5rem;
+  border: 3px solid var(--primary);
+  box-shadow: 0 0 32px 8px var(--glow-color), 0 0 0 8px var(--background);
+  background: var(--background);
+  max-width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+}
+
+.modern-grid-hero h1, .modern-grid-hero .hero-title {
+  font-size: 6vw;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--foreground);
+  text-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-color);
+  animation: pulsate 3s infinite alternate;
+}
+
+.hero-subtitle {
+  color: var(--secondary);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.5rem;
+  opacity: 0.85;
+}
+
+.hero-title.gradient-text {
+  margin-bottom: 2.2rem;
+}
+
+.neon-text {
+  color: #bbb;
+  font-size: 1.25rem;
+  margin-bottom: 2.5rem;
+  max-width: 520px;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 24px;
+}
+
+/* YouTube video background styles */
+.youtube-bg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+.youtube-bg-iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120vw;
+  height: 67.5vw;
+  min-width: 100vw;
+  min-height: 100vh;
+  transform: translate(-50%, -50%);
+  filter: brightness(0.38) blur(1.2px) saturate(1.1);
+  pointer-events: none;
+}
+.youtube-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, rgba(15,15,39,0.35) 0%, rgba(15,15,39,0.65) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Synthwave specific elements */
+.retro-grid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transform: rotateX(60deg);
+  overflow: hidden;
+  background: transparent !important;
+}
+
+.neon-button {
+  padding: 0.8em 2em;
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 0 0 10px var(--glow-color);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.neon-button:hover {
+  background: var(--primary);
+  color: var(--background);
+  box-shadow: 0 0 20px var(--glow-color), 0 0 40px var(--glow-color);
+  transform: translateY(-3px);
+}
+
+.neon-blue {
+  color: var(--synthwave-blue);
+  text-shadow: 0 0 5px rgba(0, 162, 255, 0.6), 0 0 10px rgba(0, 162, 255, 0.4);
+}
+
+.neon-purple {
+  color: var(--synthwave-purple);
+  text-shadow: 0 0 5px rgba(177, 0, 255, 0.6), 0 0 10px rgba(177, 0, 255, 0.4);
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(90deg, var(--primary), var(--synthwave-purple), var(--synthwave-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+/* Glow animations */
+@keyframes pulsate {
+  0% {
+    text-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-color);
+  }
+  100% {
+    text-shadow: 0 0 15px var(--glow-color), 0 0 30px var(--glow-color), 0 0 40px var(--glow-color);
+  }
+}
+
+/* Navbar link styles for theme support */
+.navbar-link {
+  color: var(--foreground);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color 0.2s;
+  opacity: 0.85;
+}
+.navbar-link:hover,
+.navbar-link:focus {
+  color: var(--primary);
+  opacity: 1;
+}
+
+.navbar-link-mobile {
+  color: var(--foreground);
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color 0.2s;
+  opacity: 0.95;
+  width: 100%;
+}
+.navbar-link-mobile:hover,
+.navbar-link-mobile:focus {
+  color: var(--primary);
+  opacity: 1;
+}
+
+/* Synthwave Glow for Navbar Logo */
+.navbar-logo-glow {
+  color: #fff;
+  font-family: 'Geist', 'Inter', Arial, sans-serif;
+  text-shadow:
+    0 0 8px #fc28a8,
+    0 0 16px #fc28a8,
+    0 0 24px #03edf9,
+    0 0 40px #fc28a8;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  background: none !important;
+}
+
+/* Synthwave Glow for Primary CTAs - Blue, Less Intense */
+.synthwave-glow {
+  color: #03edf9 !important;
+  text-shadow:
+    0 0 2.7px #03edf9,
+    0 0 5.4px #03edf9,
+    0 0 10.8px #03edf9,
+    0 0 16.2px #03edf9;
+  background: none !important;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.synthwave-glow:hover, .synthwave-glow:focus {
+  color: #fff !important;
+  text-shadow:
+    0 0 5.4px #03edf9,
+    0 0 10.8px #03edf9,
+    0 0 16.2px #03edf9,
+    0 0 21.6px #03edf9;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .modern-grid-hero h1, .modern-grid-hero .hero-title {
+    font-size: 3rem;
+  }
+  .modern-grid-hero .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  .modern-grid-card {
+    padding: 1.2rem 1rem;
+  }
+}
+
+/* ABSOLUTE OVERRIDE: Make modern-grid-hero fully transparent, including all children */
+.modern-grid-hero,
+.modern-grid-hero * {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+/* Remove any color from .modern-grid-default too, just in case */
+.modern-grid-default,
+.modern-grid-default * {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+/* ABSOLUTE OVERRIDE: Make all modern-grid-card (hero card) backgrounds 100% transparent, no shadow, no border, no blur, and no color. */
+.modern-grid-card,
+.modern-grid-card * {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+/* Remove any dark color from .modern-hero-bg just in case */
+.modern-hero-bg {
+  background: transparent !important;
+}
+
+/* Make the main hero content container transparent */
+.modern-hero-bg {
+  background: transparent !important;
+}
+
+/* Force ModernCard to be transparent everywhere */
+.transparent-bg,
+.modern-grid-card {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+/* Make the inner hero card (dark block) transparent for full video effect */
+.modern-hero-bg .modern-grid-card {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+/* FINAL OVERRIDE: Make modern-grid-container and all children fully transparent */
+.modern-grid-container,
+.modern-grid-container * {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+/* --- Synthwave Section Spacing Improvements --- */
+.modern-section, .modern-section * {
+  margin-top: 0 !important;
+}
+
+.modern-section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  margin-bottom: 4rem;
+}
+
+.modern-section:last-child {
+  margin-bottom: 0;
+}
+
+/* Add more space between major headings and sections */
+.modern-section h2, .modern-section .section-title {
+  margin-bottom: 2.5rem;
+  margin-top: 0;
+}
+
+.modern-section p, .modern-section .section-description {
+  margin-bottom: 1.5rem;
+}
+
+/* Add more space under stats blocks */
+.modern-section .modern-stats {
+  margin-bottom: 2.5rem;
+}
+
+/* Add more space above Professional Journey heading */
+#experience {
+  margin-top: 4rem !important;
+}
+
+/* Add more space under Experience section */
+#experience + * {
+  margin-top: 2.5rem !important;
+}
+
+.profilecard-text-left {
+  margin-left: -80px !important;
+}
+
+.force-left-shift {
+  margin-left: -48px !important;
+  border: 2px solid red !important;
 }
