@@ -85,14 +85,14 @@ export default function AboutPage() {
                 position: 'relative'
               }}>
                 {/* Replace with your actual image */}
-                <Box 
-                  component="img" 
-                  src="/images/profile.jpg" 
-                  alt="Profile" 
+                <Box
+                  component="img"
+                  src="/images/profile.jpg"
+                  alt="Profile"
                   sx={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover"
                   }}
                 />
               </Box>
@@ -101,14 +101,14 @@ export default function AboutPage() {
               <Typography variant="h3" className="gradient-text" sx={{ mb: 3 }}>
                 My Journey
               </Typography>
-              <Typography paragraph sx={{ mb: 2, fontSize: '1.1rem' }}>
-                With over 15 years in the tech industry, I\'ve guided organizations through digital transformations that enhance both team dynamics and business outcomes. My approach blends technical expertise with human-centered leadership to create sustainable agile environments.
+              <Typography paragraph sx={{ mb: 2, fontSize: "1.1rem" }}>
+                With over 15 years in the tech industry, I've guided organizations through digital transformations that enhance both team dynamics and business outcomes. My approach blends technical expertise with human-centered leadership to create sustainable agile environments.
               </Typography>
-              <Typography paragraph sx={{ mb: 2, fontSize: '1.1rem' }}>
+              <Typography paragraph sx={{ mb: 2, fontSize: "1.1rem" }}>
                 I specialize in coaching Scrum Masters, Product Owners, and development teams in adopting agile mindsets that go beyond ceremonies. My work has helped Fortune 500 companies, startups, and government agencies streamline delivery, improve product quality, and foster innovation cultures.
               </Typography>
-              <Typography paragraph sx={{ fontSize: '1.1rem' }}>
-                When I\'m not facilitating workshops or coaching teams, you\'ll find me contributing to open-source projects, speaking at industry conferences, or exploring the latest in AI and machine learning technologies.
+              <Typography paragraph sx={{ fontSize: "1.1rem" }}>
+                When I'm not facilitating workshops or coaching teams, you'll find me contributing to open-source projects, speaking at industry conferences, or exploring the latest in AI and machine learning technologies.
               </Typography>
             </GridItem>
           </GridContainer>
@@ -202,10 +202,10 @@ export default function AboutPage() {
               Personal Interests
             </Typography>
             <Typography paragraph sx={{ fontSize: '1.1rem' }}>
-              When I\'m not engrossed in agile transformations, I\'m an avid mountain biker and outdoor enthusiast. The challenge of navigating difficult trails mirrors the complex problems I help organizations solve – requiring focus, adaptability, and a willingness to embrace uncertainty.
+              When I'm not engrossed in agile transformations, I'm an avid mountain biker and outdoor enthusiast. The challenge of navigating difficult trails mirrors the complex problems I help organizations solve – requiring focus, adaptability, and a willingness to embrace uncertainty.
             </Typography>
             <Typography paragraph sx={{ fontSize: '1.1rem' }}>
-              I\'m also passionate about mentoring the next generation of agile practitioners. I volunteer with local coding boot camps and regularly participate in meetups to share knowledge and experiences with those looking to grow in the field.
+              I'm also passionate about mentoring the next generation of agile practitioners. I volunteer with local coding boot camps and regularly participate in meetups to share knowledge and experiences with those looking to grow in the field.
             </Typography>
             <Typography paragraph sx={{ fontSize: '1.1rem' }}>
               Technology continues to fascinate me beyond my professional work. I experiment with IoT projects, contribute to open source, and stay on top of emerging tech trends that might shape the future of agile methodologies.
