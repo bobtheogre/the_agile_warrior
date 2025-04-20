@@ -5,9 +5,12 @@
 [build.environment]
   NODE_VERSION = "18"
 
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
 [dev]
   command = "npm run dev"
-  port = 3000
+  port = 5000
 
 [functions]
   directory = "netlify/functions"
