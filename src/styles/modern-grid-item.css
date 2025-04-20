@@ -1,0 +1,65 @@
+/* modern-grid-item.css
+   Fabrica-inspired minimal, bold, modern grid/card/hero styles
+*/
+
+.modern-grid-container {
+  background: #111; /* dark background */
+  min-height: 100vh;
+  padding: 0;
+}
+
+.modern-grid-default {
+  /* No extra styles, just inherit dark background */
+}
+
+.modern-grid-card {
+  background: #fff;
+  color: #111;
+  border-radius: 1.5rem;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.12);
+  padding: 2rem 2.5rem;
+  margin: 1.5rem 0;
+  transition: box-shadow 0.2s;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.1rem;
+}
+
+.modern-grid-card:hover {
+  box-shadow: 0 12px 48px rgba(0,0,0,0.18);
+}
+
+.modern-grid-hero {
+  background: transparent;
+  color: #fff;
+  padding: 6rem 0 3rem 0;
+  text-align: left;
+}
+
+.modern-grid-hero h1, .modern-grid-hero .hero-title {
+  font-size: 6vw;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.modern-grid-hero .hero-subtitle {
+  font-size: 2vw;
+  font-weight: 400;
+  margin-bottom: 2.5rem;
+  opacity: 0.92;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .modern-grid-hero h1, .modern-grid-hero .hero-title {
+    font-size: 3rem;
+  }
+  .modern-grid-hero .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  .modern-grid-card {
+    padding: 1.2rem 1rem;
+  }
+}
