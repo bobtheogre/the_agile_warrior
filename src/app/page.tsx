@@ -153,14 +153,14 @@ export default function HomePage() {
           <ModernSection
             id="about"
             title="Passionate About Agile Excellence"
-            subtitle="With over 15 years of experience in Agile methodologies, I've helped organizations of all sizes transform their development processes and achieve remarkable results."
+            subtitle="With over 15 years of experience in Agile methodologies, I&apos;ve helped organizations of all sizes transform their development processes and achieve remarkable results."
           >
             <Box className="mb-16">
               <Typography variant="body1" className="text-gray-400 mb-8 max-w-3xl">
                 I specialize in coaching teams through Agile transformations, implementing Scrum and Kanban frameworks, and fostering a culture of continuous improvement. My approach combines technical expertise with strong leadership skills to help teams deliver high-quality products efficiently.
               </Typography>
               <Typography variant="body1" className="text-gray-400 mb-12 max-w-3xl">
-                Throughout my career, I've worked with Fortune 500 companies, startups, and everything in between. I'm passionate about sharing knowledge and empowering teams to reach their full potential.
+                Throughout my career, I&apos;ve worked with Fortune 500 companies, startups, and everything in between. I&apos;m passionate about sharing knowledge and empowering teams to reach their full potential.
               </Typography>
             </Box>
             
@@ -196,7 +196,7 @@ export default function HomePage() {
         <ModernSection
           id="contact"
           title="Get In Touch"
-          subtitle="Interested in working together? Let's discuss how I can help your organization."
+          subtitle="Interested in working together? Let&apos;s discuss how I can help your organization."
           isDark={true}
         >
           <Grid container spacing={6}>
@@ -207,7 +207,7 @@ export default function HomePage() {
                 </Typography>
                 <Box className="space-y-4 mb-8">
                   <Typography variant="body1" className="text-gray-400">
-                    Feel free to reach out if you're looking for an Agile coach, need help with your team's transformation, or just want to connect.
+                    Feel free to reach out if you&apos;re looking for an Agile coach, need help with your team&apos;s transformation, or just want to connect.
                   </Typography>
                 </Box>
                 

@@ -41,7 +41,7 @@ export function ProfileCard() {
           style={{ marginTop: 10, padding: '0.3em 1.1em', fontSize: '0.98rem' }}
           onClick={() => window.location.href = '#contact'}
         >
-          LET'S TALK
+          LET&apos;S TALK
         </ModernButton>
       </Box>
     </Box>

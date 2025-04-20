@@ -12,7 +12,7 @@ type GridItemProps = {
   md?: number | boolean;
   lg?: number | boolean;
   xl?: number | boolean;
-  variant?: 'default' | 'card' | 'hero'; // new prop for style variants
+  variant?: 'default' | 'card' | 'hero'; 
   className?: string;
 };
 
