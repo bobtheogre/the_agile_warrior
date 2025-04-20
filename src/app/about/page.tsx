@@ -129,9 +129,11 @@ export default function AboutPage() {
                   className="modern-grid-card"
                   icon={value.icon}
                   title={value.title}
-                  description={value.description}
-                  titleClassName="neon-text"
-                />
+                >
+                  <Typography variant="body2" className="neon-text">
+                    {value.description}
+                  </Typography>
+                </ModernCard>
               </Grid>
             ))}
           </Grid>
