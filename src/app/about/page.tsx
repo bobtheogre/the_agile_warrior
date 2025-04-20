@@ -84,7 +84,6 @@ export default function AboutPage() {
                 height: { xs: '300px', md: '400px' },
                 position: 'relative'
               }}>
-                {/* Replace with your actual image */}
                 <Box
                   component="img"
                   src="/images/profile.jpg"
