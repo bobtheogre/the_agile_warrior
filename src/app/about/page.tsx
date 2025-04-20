@@ -73,7 +73,7 @@ export default function AboutPage() {
       </Box>
 
       {/* Biography */}
-      <ModernSection id="bio">
+      <ModernSection id="bio" title="Biography">
         <Container maxWidth="lg">
           <GridContainer spacing={4}>
             <GridItem xs={12} md={4}>
@@ -116,7 +116,7 @@ export default function AboutPage() {
       </ModernSection>
 
       {/* Core Values */}
-      <ModernSection id="values" darkBg>
+      <ModernSection id="values" title="Core Values" darkBg>
         <Container maxWidth="lg">
           <Typography variant="h2" className="gradient-text" sx={{ mb: 6, textAlign: 'center' }}>
             Core Values
@@ -141,7 +141,7 @@ export default function AboutPage() {
       </ModernSection>
 
       {/* Certifications Section */}
-      <ModernSection id="certifications">
+      <ModernSection id="certifications" title="Certifications & Education">
         <Container maxWidth="lg">
           <Typography variant="h2" className="gradient-text" sx={{ mb: 6, textAlign: 'center' }}>
             Certifications & Education
@@ -191,7 +191,7 @@ export default function AboutPage() {
       </ModernSection>
 
       {/* Personal Interests */}
-      <ModernSection id="interests" darkBg>
+      <ModernSection id="interests" title="Beyond Work" darkBg>
         <Container maxWidth="lg">
           <Typography variant="h2" className="gradient-text" sx={{ mb: 6, textAlign: 'center' }}>
             Beyond Work
