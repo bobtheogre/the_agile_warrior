@@ -123,7 +123,7 @@ export default function AboutPage() {
           
           <Grid container spacing={4}>
             {coreValues.map((value, index) => (
-              <Grid item xs={12} sm={6} md={3} key={index}>
+              <GridItem xs={12} sm={6} md={3} key={index}>
                 <ModernCard
                   className="modern-grid-card"
                   icon={value.icon}
@@ -133,7 +133,7 @@ export default function AboutPage() {
                     {value.description}
                   </Typography>
                 </ModernCard>
-              </Grid>
+              </GridItem>
             ))}
           </Grid>
         </Container>
