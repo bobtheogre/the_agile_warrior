@@ -8,11 +8,9 @@ import { ModernSection } from "@/components/ui/modern-section";
 import { ModernTimeline } from "@/components/ui/modern-timeline";
 import { ModernStats } from "@/components/ui/modern-stats";
 import { SynthwaveSkillsGrid } from "@/components/ui/synthwave-skill-card";
-import { ModernCard } from "@/components/ui/modern-card";
 import { ModernNavbar } from "@/components/ui/modern-navbar";
 import { ModernHero } from "@/components/ui/modern-hero";
 import { ModernFooter } from "@/components/ui/modern-footer";
-import { ModernContactForm } from "@/components/ui/modern-contact-form";
 import { LinkedInFeed } from "@/components/ui/linkedin-feed";
 import theme from "@/theme";
 

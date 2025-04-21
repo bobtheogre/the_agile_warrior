@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { AppBar, Toolbar, Box, IconButton, Drawer, List, ListItem, Container, Typography } from '@mui/material';
+import { AppBar, Toolbar, Box, IconButton, Drawer, List, ListItem, Container } from '@mui/material';
 import { Menu as MenuIcon, X } from 'lucide-react';
 import Link from 'next/link';
-import { ModernButton } from './modern-button';
 import { ThemeToggle } from './theme-toggle';
 
 interface NavLink {
