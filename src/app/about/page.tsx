@@ -214,7 +214,17 @@ export default function AboutPage() {
       </ModernSection>
 
       {/* Footer */}
-      <ModernFooter />
+      <ModernFooter
+        logoText="Bob Huff"
+        links={[
+          { label: 'Home', href: '/' },
+          { label: 'About', href: '/about' },
+          { label: 'Portfolio', href: '/portfolio' },
+          { label: 'Contact', href: '/#contact' }
+        ]}
+        socialLinks={null}
+        copyright=" 2025 Bob Huff. All rights reserved."
+      />
     </Box>
   );
 }
