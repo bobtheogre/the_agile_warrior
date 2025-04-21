@@ -13,11 +13,9 @@ interface NavLink {
 interface ModernNavbarProps {
   links: NavLink[];
   logoText: string;
-  ctaText?: string;
-  ctaAction?: () => void;
 }
 
-export function ModernNavbar({ links, logoText, ctaText, ctaAction }: ModernNavbarProps) {
+export function ModernNavbar({ links, logoText }: ModernNavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 

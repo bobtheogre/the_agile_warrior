@@ -1,11 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
-import Image from "next/image";
-import { ThemeProvider, Box, Container, Typography, Grid, useMediaQuery } from "@mui/material";
-import { Award, Briefcase, Code, LineChart, Users, Clock, ChevronRight, Github, Linkedin, Twitter } from "lucide-react";
+import { ThemeProvider, Box } from "@mui/material";
+import { Award, Briefcase, Code, LineChart, Users, Clock, Github, Linkedin, Twitter } from "lucide-react";
 
 // Custom components
-import { ModernButton } from "@/components/ui/modern-button";
 import { ModernSection } from "@/components/ui/modern-section";
 import { ModernTimeline } from "@/components/ui/modern-timeline";
 import { ModernStats } from "@/components/ui/modern-stats";
@@ -17,10 +15,8 @@ import { ModernFooter } from "@/components/ui/modern-footer";
 import { ModernContactForm } from "@/components/ui/modern-contact-form";
 import { LinkedInFeed } from "@/components/ui/linkedin-feed";
 import theme from "@/theme";
-import { ProfileCard } from "@/components/ui/ProfileCard"; // Import the ProfileCard component
 
 export default function HomePage() {
-  const isMobile = useMediaQuery('(max-width:768px)');
   const [mounted, setMounted] = useState(false);
 
   // Ensure hydration
@@ -127,8 +123,6 @@ export default function HomePage() {
         <ModernNavbar 
           logoText="The Agile Warrior" 
           links={navLinks} 
-          ctaText="Download Resume"
-          ctaAction={() => console.log('Resume download clicked')}
         />
 
         {/* Hero Section */}
@@ -156,12 +150,12 @@ export default function HomePage() {
             subtitle="With over 15 years of experience in Agile methodologies, I&apos;ve helped organizations of all sizes transform their development processes and achieve remarkable results."
           >
             <Box className="mb-16">
-              <Typography variant="body1" className="text-gray-400 mb-8 max-w-3xl">
+              <Box className="text-gray-400 mb-8 max-w-3xl">
                 I specialize in coaching teams through Agile transformations, implementing Scrum and Kanban frameworks, and fostering a culture of continuous improvement. My approach combines technical expertise with strong leadership skills to help teams deliver high-quality products efficiently.
-              </Typography>
-              <Typography variant="body1" className="text-gray-400 mb-12 max-w-3xl">
+              </Box>
+              <Box className="text-gray-400 mb-12 max-w-3xl">
                 Throughout my career, I&apos;ve worked with Fortune 500 companies, startups, and everything in between. I&apos;m passionate about sharing knowledge and empowering teams to reach their full potential.
-              </Typography>
+              </Box>
             </Box>
             
             <ModernStats items={statItems} />
@@ -199,67 +193,49 @@ export default function HomePage() {
           subtitle="Interested in working together? Let&apos;s discuss how I can help your organization."
           isDark={true}
         >
-          <Grid container spacing={6}>
-            <Grid item xs={12} md={5}>
-              <Box>
-                <Typography variant="h5" className="text-white font-light mb-6">
-                  Contact Information
-                </Typography>
-                <Box className="space-y-4 mb-8">
-                  <Typography variant="body1" className="text-gray-400">
-                    Feel free to reach out if you&apos;re looking for an Agile coach, need help with your team&apos;s transformation, or just want to connect.
-                  </Typography>
-                </Box>
-                
-                <Box className="space-y-4">
-                  <Box className="flex items-center gap-3">
-                    <Box className="w-10 h-10 flex items-center justify-center border border-[#333]">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#fcb900]"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                    </Box>
-                    <Typography variant="body2" className="text-gray-400">
-                      (555) 123-4567
-                    </Typography>
-                  </Box>
-                  
-                  <Box className="flex items-center gap-3">
-                    <Box className="w-10 h-10 flex items-center justify-center border border-[#333]">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#fcb900]"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                    </Box>
-                    <Typography variant="body2" className="text-gray-400">
-                      bob@agilewarrior.com
-                    </Typography>
-                  </Box>
-                  
-                  <Box className="flex items-center gap-3">
-                    <Box className="w-10 h-10 flex items-center justify-center border border-[#333]">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#fcb900]"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    </Box>
-                    <Typography variant="body2" className="text-gray-400">
-                      San Francisco, CA
-                    </Typography>
-                  </Box>
-                </Box>
-                
-                <Box className="mt-8">
-                  <Typography variant="body2" className="text-gray-500 mb-4">
-                    Connect with me
-                  </Typography>
-                  <Box className="flex gap-6">
-                    {socialIcons}
-                  </Box>
-                </Box>
+          <Box className="space-y-4 mb-8">
+            <Box className="text-gray-400">
+              Feel free to reach out if you&apos;re looking for an Agile coach, need help with your team&apos;s transformation, or just want to connect.
+            </Box>
+          </Box>
+          
+          <Box className="space-y-4">
+            <Box className="flex items-center gap-3">
+              <Box className="w-10 h-10 flex items-center justify-center border border-[#333]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#fcb900]"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
               </Box>
-            </Grid>
+              <Box className="text-gray-400">
+                (555) 123-4567
+              </Box>
+            </Box>
             
-            <Grid item xs={12} md={7}>
-              <ModernCard className="h-full">
-                <Typography variant="h5" className="text-white font-light mb-6">
-                  Send a Message
-                </Typography>
-                <ModernContactForm />
-              </ModernCard>
-            </Grid>
-          </Grid>
+            <Box className="flex items-center gap-3">
+              <Box className="w-10 h-10 flex items-center justify-center border border-[#333]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#fcb900]"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </Box>
+              <Box className="text-gray-400">
+                bob@agilewarrior.com
+              </Box>
+            </Box>
+            
+            <Box className="flex items-center gap-3">
+              <Box className="w-10 h-10 flex items-center justify-center border border-[#333]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#fcb900]"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </Box>
+              <Box className="text-gray-400">
+                San Francisco, CA
+              </Box>
+            </Box>
+          </Box>
+          
+          <Box className="mt-8">
+            <Box className="text-gray-500 mb-4">
+              Connect with me
+            </Box>
+            <Box className="flex gap-6">
+              {socialIcons}
+            </Box>
+          </Box>
         </ModernSection>
 
         {/* Footer */}
