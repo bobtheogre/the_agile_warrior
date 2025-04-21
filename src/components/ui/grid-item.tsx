@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, GridProps } from '@mui/material';
+import { Grid } from '@mui/material';
 import clsx from 'clsx';
 
 // Temporarily comment out the custom CSS import to avoid PostCSS errors
@@ -41,13 +41,13 @@ export function GridItem({ children, xs, sm, md, lg, xl, variant = 'default', cl
 type GridContainerProps = {
   children: React.ReactNode;
   spacing?: number;
-  alignItems?: string;
+  alignItems?: 'center' | 'flex-start' | 'flex-end' | 'stretch' | 'baseline';
   className?: string;
 };
 
 export function GridContainer({ children, spacing, alignItems, className = '', ...props }: GridContainerProps) {
   return (
-    <Grid container spacing={spacing} alignItems={alignItems as any} className={clsx(className, 'modern-grid-container')} {...props}>
+    <Grid container spacing={spacing} alignItems={alignItems} className={clsx(className, 'modern-grid-container')} {...props}>
       {children}
     </Grid>
   );
