@@ -5,22 +5,23 @@ import clsx from 'clsx';
 // Temporarily comment out the custom CSS import to avoid PostCSS errors
 // import '../../styles/modern-grid-item.css';
 
+// Fix: Use GridProps for GridItemProps (do not omit 'item') so sizing props are available
+// This resolves type errors for xs, md, etc. on GridItem
+
 type GridItemProps = GridProps & {
-  item?: true;
   variant?: 'default' | 'card' | 'hero';
   className?: string;
 };
 
 export function GridItem({
   children,
-  item = true,
   variant = 'default',
   className = '',
   ...props
 }: GridItemProps) {
   return (
     <Grid
-      item={item}
+      item
       className={clsx(
         className,
         variant === 'card' && 'modern-grid-card',
