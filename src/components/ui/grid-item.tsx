@@ -1,18 +1,15 @@
 import React from 'react';
-import { Grid } from '@mui/material';
+import { Grid, GridProps } from '@mui/material';
 import clsx from 'clsx';
 
 // Temporarily comment out the custom CSS import to avoid PostCSS errors
 // import '../../styles/modern-grid-item.css';
 
-type GridItemProps = {
-  children: React.ReactNode;
-  xs?: number | boolean;
-  sm?: number | boolean;
-  md?: number | boolean;
-  lg?: number | boolean;
-  xl?: number | boolean;
-  variant?: 'default' | 'card' | 'hero'; 
+// Extend MUI GridProps, omitting 'container' and 'item' to avoid prop conflicts
+// Add variant and className as custom props
+
+type GridItemProps = Omit<GridProps, 'container' | 'item'> & {
+  variant?: 'default' | 'card' | 'hero';
   className?: string;
 };
 
@@ -25,13 +22,13 @@ export function GridItem({ children, xs, sm, md, lg, xl, variant = 'default', cl
       md={md}
       lg={lg}
       xl={xl}
-      {...props}
       className={clsx(
         className,
         variant === 'card' && 'modern-grid-card',
         variant === 'hero' && 'modern-grid-hero',
         variant === 'default' && 'modern-grid-default'
       )}
+      {...props}
     >
       {children}
     </Grid>
