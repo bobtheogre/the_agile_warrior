@@ -5,23 +5,22 @@ import clsx from 'clsx';
 // Temporarily comment out the custom CSS import to avoid PostCSS errors
 // import '../../styles/modern-grid-item.css';
 
-// Extend MUI GridProps, omitting 'container' and 'item' to avoid prop conflicts
-// Add variant and className as custom props
-
-type GridItemProps = Omit<GridProps, 'container' | 'item'> & {
+type GridItemProps = GridProps & {
+  item?: true;
   variant?: 'default' | 'card' | 'hero';
   className?: string;
 };
 
-export function GridItem({ children, xs, sm, md, lg, xl, variant = 'default', className = '', ...props }: GridItemProps) {
+export function GridItem({
+  children,
+  item = true,
+  variant = 'default',
+  className = '',
+  ...props
+}: GridItemProps) {
   return (
     <Grid
-      item
-      xs={xs}
-      sm={sm}
-      md={md}
-      lg={lg}
-      xl={xl}
+      item={item}
       className={clsx(
         className,
         variant === 'card' && 'modern-grid-card',
