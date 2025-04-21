@@ -115,7 +115,7 @@ export default function AboutPage() {
       </ModernSection>
 
       {/* Core Values */}
-      <ModernSection id="values" title="Core Values" darkBg>
+      <ModernSection id="values" title="Core Values">
         <Container maxWidth="lg">
           <Typography variant="h2" className="gradient-text" sx={{ mb: 6, textAlign: 'center' }}>
             Core Values
@@ -190,7 +190,7 @@ export default function AboutPage() {
       </ModernSection>
 
       {/* Personal Interests */}
-      <ModernSection id="interests" title="Beyond Work" darkBg>
+      <ModernSection id="interests" title="Beyond Work">
         <Container maxWidth="lg">
           <Typography variant="h2" className="gradient-text" sx={{ mb: 6, textAlign: 'center' }}>
             Beyond Work
