@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, TextField, Grid, InputLabel } from '@mui/material';
 import { ModernButton } from './modern-button';
 
-export function ModernContactForm() {
+export function ModernContactForm(): JSX.Element {
   return (
     <Box component="form" className="mt-8">
       <Grid container spacing={4}>
@@ -16,6 +16,7 @@ export function ModernContactForm() {
             </InputLabel>
             <TextField
               id="name"
+              name="name"
               fullWidth
               variant="outlined"
               InputProps={{
@@ -47,6 +48,7 @@ export function ModernContactForm() {
             </InputLabel>
             <TextField
               id="email"
+              name="email"
               fullWidth
               variant="outlined"
               type="email"
@@ -80,6 +82,7 @@ export function ModernContactForm() {
         </InputLabel>
         <TextField
           id="subject"
+          name="subject"
           fullWidth
           variant="outlined"
           InputProps={{
@@ -110,6 +113,7 @@ export function ModernContactForm() {
         </InputLabel>
         <TextField
           id="message"
+          name="message"
           fullWidth
           multiline
           rows={5}
