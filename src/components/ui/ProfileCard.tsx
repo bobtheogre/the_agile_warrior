@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box } from '@mui/material';
 import { ModernButton } from './modern-button';
+import Image from 'next/image';
 
 export function ProfileCard() {
   return (
@@ -20,10 +21,13 @@ export function ProfileCard() {
         position: 'relative',
       }}
     >
-      <img
+      <Image
         src="/headshot.jpeg"
         alt="Bob Huff - Agile Warrior"
-        style={{ width: 100, height: 100, borderRadius: '1rem', objectFit: 'cover', border: '2.5px solid #03edf9', boxShadow: '0 0 20px #03edf9', zIndex: 2, marginRight: 12 }}
+        width={100}
+        height={100}
+        style={{ borderRadius: '1rem', objectFit: 'cover', border: '2.5px solid #03edf9', boxShadow: '0 0 20px #03edf9', zIndex: 2, marginRight: 12 }}
+        priority
       />
       <Box
         sx={{

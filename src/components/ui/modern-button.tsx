@@ -1,6 +1,5 @@
-// @ts-nocheck - This bypasses TypeScript checking for this file to resolve build errors
 import React from 'react';
-import { Button as MuiButton, ButtonProps } from '@mui/material';
+import { Button as MuiButton } from '@mui/material';
 
 // Simplified props definition to avoid type errors during build
 interface ModernButtonProps {
