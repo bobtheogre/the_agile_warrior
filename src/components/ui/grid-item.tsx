@@ -1,4 +1,4 @@
-// @ts-nocheck - This bypasses TypeScript checking for this file to resolve build errors
+// @ts-nocheck - This bypasses TypeScript checking for this file to resolve build errors with MUI Grid
 import React from 'react';
 import { Grid } from '@mui/material';
 import clsx from 'clsx';
@@ -6,7 +6,7 @@ import clsx from 'clsx';
 // Temporarily comment out the custom CSS import to avoid PostCSS errors
 // import '../../styles/modern-grid-item.css';
 
-// Use forwardRef to avoid certain React warnings
+// Simple solution with @ts-nocheck to allow the build to succeed
 export function GridItem({ children, variant = 'default', className = '', ...props }) {
   return (
     <Grid
@@ -24,7 +24,6 @@ export function GridItem({ children, variant = 'default', className = '', ...pro
   );
 }
 
-// Use forwardRef for GridContainer as well
 export function GridContainer({ children, ...props }) {
   return (
     <Grid container {...props}>
