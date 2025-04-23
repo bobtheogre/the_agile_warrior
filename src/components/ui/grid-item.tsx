@@ -1,4 +1,3 @@
-// @ts-nocheck - This bypasses TypeScript checking for this file to resolve build errors with MUI Grid
 import React from 'react';
 import { Grid } from '@mui/material';
 import clsx from 'clsx';
@@ -6,7 +5,7 @@ import clsx from 'clsx';
 // Temporarily comment out the custom CSS import to avoid PostCSS errors
 // import '../../styles/modern-grid-item.css';
 
-// Simple solution with @ts-nocheck to allow the build to succeed
+// Simple solution that allows xs, md props to work with MUI Grid component
 export function GridItem({ children, variant = 'default', className = '', ...props }) {
   return (
     <Grid
